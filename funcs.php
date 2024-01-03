@@ -18,3 +18,17 @@ function db_conn(){
 function n($num){
   return number_format($num);
 }
+
+function sql_error($stmt){
+  $error = $stmt->errorInfo();
+  exit('SQLError:' . $error[2]);
+}
+
+function loginCheck(){
+  if(!isset($_SESSION['chk_ssid']) || $_SESSION['chk_ssid'] !== session_id()){
+      exit('LOGIN ERROR');
+  } else {
+      session_regenerate_id(true);
+      $_SESSION['chk_ssid'] = session_id();
+  }
+}

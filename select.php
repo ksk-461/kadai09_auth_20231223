@@ -1,5 +1,7 @@
 <?php
+    session_start();
     require_once('funcs.php');
+    loginCheck();
 
     function getTask($status_sql){
         $pdo = db_conn();
@@ -25,7 +27,11 @@
                 $view .= '</div>';
                 $view .= '<div class="status">';
                 $view .= '<a class="button update" href="detail.php?id='. $result['id'] .'">変更</a>';
-                $view .= '<a class="button delete" href="delete.php?id=' . $result['id'] .'">削除</a>';
+
+                if($_SESSION['kanri_flg'] === 1){
+                    $view .= '<a class="button delete" href="delete.php?id=' . $result['id'] .'">削除</a>';
+                }
+                
                 $view .= '</div>';
                 $view .= '<ul>';
                 $view .= '<li>'. 'A地区：'.n(h($result['sum_a'])).'枚</li>';
@@ -55,6 +61,9 @@
     <link rel="stylesheet" href="./css/select.css">
     <title>確認</title>
     <header>
+        <div class="logout">
+            <button class="button-038" onclick="location.href='./logout.php'">ログアウト</button>
+        </div>
         <h2>お問い合わせ受注状況</h2>
     </header>
 
