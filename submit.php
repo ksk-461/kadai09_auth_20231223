@@ -62,6 +62,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="refresh" content="10; url=./index.php">
     <link rel="stylesheet" href="css/submit.css">
     <title>登録完了</title>
 </head>
@@ -76,6 +77,9 @@
             追って担当者よりご連絡いたします。<br>
             （営業時間：平日9:30〜17:30）<br>
         </p>
+    </div>
+    <div class="loc">
+        <a href="./index.php">※こちらのページは10秒後に移動します。</a>
     </div>
 </body>
 </html>

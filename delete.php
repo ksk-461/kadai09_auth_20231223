@@ -1,5 +1,7 @@
 <?php
+session_start();
 require_once('funcs.php');
+loginCheck();
 $id = $_GET['id'];
 
 $pdo = db_conn();
@@ -11,6 +13,5 @@ $status = $stmt->execute();
 if ($status === false) {
     exit('SQLError:' . print_r($error, true));
 } else {
-    header('Location: select.php');
-    exit();
+    redirect('select.php');
 }

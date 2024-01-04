@@ -32,3 +32,9 @@ function loginCheck(){
       $_SESSION['chk_ssid'] = session_id();
   }
 }
+
+function redirect($file_name)
+{
+    header('Location: ' . $file_name);
+    exit();
+}

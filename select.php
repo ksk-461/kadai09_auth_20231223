@@ -11,8 +11,7 @@
         
         $view="";
         if ($status==false) {
-            $error = $stmt->errorInfo();
-            exit("ErrorQuery:".$error[2]);
+            sql_error($stmt);
         }else{
 
             while( $result = $stmt->fetch(PDO::FETCH_ASSOC)){
