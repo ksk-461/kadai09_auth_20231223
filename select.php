@@ -60,6 +60,9 @@
     <link rel="stylesheet" href="./css/select.css">
     <title>確認</title>
     <header>
+        <div class="user">
+            <p>ログインユーザー：<?= $_SESSION['name'] ?></p>
+        </div>
         <div class="logout">
             <button class="button-038" onclick="location.href='./logout.php'">ログアウト</button>
         </div>

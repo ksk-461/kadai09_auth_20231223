@@ -12,6 +12,11 @@ header h2 {
     text-align: center;
 }
 
+.user {
+    text-align: end;
+    margin: 10px;
+}
+
 .logout {
     display: flex;
     justify-content: flex-end;
